@@ -1,0 +1,15 @@
+<h3>Create new survey</h3>
+
+<form method="post" action="/survey/new">
+  <label>survey name
+    <input type="name" name="survey_name">
+  </label>
+  <label>image
+    <input type="text" name="image">
+  </label>
+  <%= erb :"_question" %><br>
+
+  <a href="#" id="add_question">add question</a>
+
+  <br><br><input type='submit' value='submit'>
+</form>

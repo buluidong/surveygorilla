@@ -1,0 +1,34 @@
+<ul id='navbar'>
+  <li class>
+    <a href='/'>Home</a>
+  </li>
+  <li id='create'>
+    <a href='/signup'>Sign Up</a>
+  </li>
+  <% if current_user %>
+  <li>
+    <a href='/profile'>My Surveys</a>
+  </li>
+   <li>
+    <a href='surveys/new_s'>Create New Survey</a>
+  </li>
+  <form name='logout' method='post' action='/logout' id='logout'>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' value='logout' class='submit_button'>
+  </form>
+  <% elsif !@hide_login_form %>
+  <form method='post' action='/sessions/new' id='login'>
+    <li class='login'>
+      <label>Email </label>
+      <input type='text' name='username' id='email'>
+    </li>
+    <li class='login'>
+      <label>Password </label>
+      <input type='password' name='password'>
+    </li>
+    <li class='login'>
+      <input type='submit' name='log in' id='login_submit' class='submit_button'>
+    </li>
+  </form>
+<% end %>
+</ul>

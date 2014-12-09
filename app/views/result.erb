@@ -1,0 +1,12 @@
+<h1><%= @survey.name %></h1>
+<% display_data = [] %>
+<% @questions.each do |q| %>
+  <h4><% q.text %></h4>
+
+  <% q.choices.each do |c| %>
+  <% display_percentage = (c.responses.length.to_f*100 / @survey.participations.length).round(1) %>
+  <% display_data << display_percentage.to_i * 10 %>
+  <div><%= c.text %> - <%= display_percentage %>%</div>
+
+  <%end%>
+  <%end%>

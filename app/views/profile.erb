@@ -1,0 +1,13 @@
+<h1>Surveys Created</h1>
+<ul>
+  <% @surveys_created.each do |s| %>
+  <li><a href='/survey/<%= s.id %>'><%= s.name %></a></li>
+  <% end %>
+</ul>
+
+<h1>Surveys Taken</h1>
+<ul>
+<% @surveys_taken.each do |s| %>
+<li><a href='/survey/<%= s.id %>/result'><%= s.name %></a></li>
+<% end %>
+</ul>

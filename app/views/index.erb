@@ -1,0 +1,12 @@
+<div id="survey_display">
+  <h1>Survey Mak Lu</h1>
+  <% @surveys.each do |s| %>
+  <span id='survey'>
+    <% if current_user && !current_user.taken_surveys.include?(s) %>
+    <a href='/survey/<%= s.id %>'><%= s.name %></a><br>
+    <%else%>
+    <%= s.name %><br>
+    <%end%>
+  </span>
+  <% end %>
+</div>
